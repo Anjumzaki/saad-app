@@ -6,13 +6,15 @@ import {
     Link
 } from "react-router-dom";
 import MyNavbar from './MyNavbar'
+import axios from 'axios'
 export default class Login extends React.Component {
 
     componentDidMount(){
         axios.get('http://localhost:3000/get/pd')
         .then((resp) =>console.log(resp))
-       
-        console.log()
+
+        axios.get('http://localhost:3000/get/se')
+        .then((resp) =>console.log(resp))
     }
     render() {
         return (
