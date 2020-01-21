@@ -259,3 +259,26 @@ input[type=text]:placeholder {
 #icon {
   width:60%;
 }
+.dashBoard{
+  width: 300px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  background-color: #212121;
+  top: 55px;
+}
+.Mylinks{
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.Mylinks:hover{
+  background-color: #2f89fc;
+  
+}
+.content{
+  margin-left: 300px;
+  padding: 50px;
+}

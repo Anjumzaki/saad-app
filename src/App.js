@@ -29,7 +29,7 @@ export default function App() {
           <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="DashBoard">
+          <Route exact path="/DashBoard">
             <DashBoard />
           </Route>
           <Route path="/login">
