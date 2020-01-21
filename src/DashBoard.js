@@ -21,7 +21,13 @@ export default class DashBoard extends React.Component {
             mLeft:'',
             mRight:'',
             mBottom:'',
-           
+            ifType:'',
+            ifLink:'',
+            pTop:'',
+            pBottom:'',
+            pLeft:'',
+            pRight:'',
+            iWidth:'',
         }
         this.handleChange = this.handleChange.bind(this)
         this.imgHandle = this.imgHandle.bind(this)
@@ -124,7 +130,7 @@ export default class DashBoard extends React.Component {
                         <div>
                             <div class="form-group">
                         <label class="font-weight-bold">Type</label>
-                        <select class="form-control" id="sel1" >
+                        <select  onChange={(e)=>this.handleChange(e)}  name="ifType" class="form-control" id="sel1" >
                             <option value="" >Select</option>
                             <option value="black">Facebook</option>
                             <option value="white">Twitter</option>
@@ -133,7 +139,7 @@ export default class DashBoard extends React.Component {
                     </div>
 
                     <div class="form-group">
-                        <label class="font-weight-bold">Iframe Link</label>
+                        <label  onChange={(e)=>this.handleChange(e)}  name="ifLink" class="font-weight-bold">Iframe Link</label>
                         <div class="row">
                             <div class="col-md-12">
                                 <input type="text" class="form-control" name="password" placeholder="Enter Link" />
@@ -145,16 +151,16 @@ export default class DashBoard extends React.Component {
                         <label class="font-weight-bold">Padding ( px )</label>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="number" class="form-control" name="password" placeholder="0" />
+                                <input  onChange={(e)=>this.handleChange(e)}  type="number" class="form-control" name="pTop" placeholder="0" />
                             </div>
                             <div class="col-md-3">
-                                <input type="number" class="form-control" name="password" placeholder="0 px" />
+                                <input  onChange={(e)=>this.handleChange(e)}  type="number" class="form-control" name="pRight" placeholder="0 px" />
                             </div>
                             <div class="col-md-3">
-                                <input type="number" class="form-control" name="password" placeholder="0 px" />
+                                <input   onChange={(e)=>this.handleChange(e)}  type="number" class="form-control" name="pBottom" placeholder="0 px" />
                             </div>
                             <div class="col-md-3">
-                                <input type="number" class="form-control" name="password" placeholder="0 px"/>
+                                <input  onChange={(e)=>this.handleChange(e)}  type="number" class="form-control" name="pLeft" placeholder="0 px"/>
                             </div>
                         </div>
                     </div>
@@ -163,32 +169,32 @@ export default class DashBoard extends React.Component {
                     <div class="form-group">
                         <label class="font-weight-bold">Width</label>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="auto" name="defaultExampleRadios" checked/>
+                            <input value="auto" name="iWidth" onChange={(e)=>this.handleChange(e)} type="radio" class="custom-control-input" id="auto" name="defaultExampleRadios"/>
                             <label class="custom-control-label" for="auto">Auto</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="w-1-4" name="defaultExampleRadios"/>
+                            <input value="col-3" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-4" name="defaultExampleRadios"/>
                             <label class="custom-control-label" for="w-1-4">1/4</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="w-1-3" name="defaultExampleRadios"/>
-                            <label class="custom-control-label" for="w-1-3">1/3</label>
+                            <input value="col-4" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-3" name="defaultExampleRadios"/>
+                            <label  class="custom-control-label" for="w-1-3">1/3</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="w-1-2" name="defaultExampleRadios" />
+                            <input value="col-6" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-2" name="defaultExampleRadios" />
                             <label class="custom-control-label"  for="w-1-2">1/2</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="w-2-3" name="defaultExampleRadios" />
+                            <input  value="col-9" name="iWidth" onChange={(e)=>this.handleChange(e)} type="radio" class="custom-control-input" id="w-2-3" name="defaultExampleRadios" />
                             <label class="custom-control-label"  for="w-2-3">2/3</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="w-3-4" name="defaultExampleRadios" />
+                            <input value="col-10" value="col-3" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-3-4" name="defaultExampleRadios" />
                             <label class="custom-control-label"  for="w-3-4">3/4</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" id="ful" name="defaultExampleRadios" />
-                            <label class="custom-control-label"  for="ful"> Full</label>
+                            <input value="col-12" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="ful" name="defaultExampleRadios" />
+                            <label  class="custom-control-label"  for="ful"> Full</label>
                         </div>
 
                     </div>
