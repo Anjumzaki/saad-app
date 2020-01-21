@@ -19,9 +19,12 @@ import DashBoard from './DashBoard'
 // through the site. This preserves the browser history,
 // making sure things like the back button and bookmarks
 // work properly.
+import store from "./store";
+import { Provider } from "react-redux";
 
 export default function App() {
   return (
+    <Provider store={store}>
     <Router>
       <div>
       <MyNavbar/>
@@ -41,6 +44,7 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+    </Provider>
   );
 }
 
