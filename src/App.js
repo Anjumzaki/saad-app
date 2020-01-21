@@ -10,7 +10,7 @@ import Home from './Home'
 import Login from './Login'
 import SignUp from './SignUp'
 import './App.css'
-import DashBoard from './DashBoad'
+import DashBoard from './DashBoard'
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 //
