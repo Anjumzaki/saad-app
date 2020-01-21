@@ -237,7 +237,8 @@ app.post('/register', function (req, res) {
       if (response === null) {
         let newUser = new User({
           userName: req.body.userName,
-          email: req.body.email,
+          fName: req.body.fName,
+          lName: req.body.lName,
           password: req.body.password
         });
         bcrypt.genSalt(10, function (err, salt) {

@@ -3,11 +3,15 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const UserSchema = new Schema({
-    userName: {
+  userName: {
     type: String,
     required: true
   },
-  email: {
+  fName: {
+    type: String,
+    required: true
+  },
+  lName: {
     type: String,
     required: true
   },
