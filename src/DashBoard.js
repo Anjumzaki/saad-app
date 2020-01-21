@@ -6,11 +6,11 @@ import {
     Link
 } from "react-router-dom";
 import MyNavbar from './MyNavbar'
-export default class Login extends React.Component {
+export default class DashBoard extends React.Component {
     render() {
         return (
             <div class="wrapper fadeInDown">
-                Home
+                Dash Board
             </div>
         );
     }

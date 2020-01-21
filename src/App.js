@@ -10,6 +10,7 @@ import Home from './Home'
 import Login from './Login'
 import SignUp from './SignUp'
 import './App.css'
+import DashBoard from './DashBoad'
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 //
@@ -27,6 +28,9 @@ export default function App() {
         <Switch>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="DashBoard">
+            <DashBoard />
           </Route>
           <Route path="/login">
             <Login />
