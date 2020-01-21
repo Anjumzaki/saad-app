@@ -47,14 +47,17 @@ class Login extends React.Component {
                         console.log("resp1", response.data.response._id)
                         this.props.getUserAsync(response.data.response._id)
                         
+                        setTimeout(() => {
+                      
                         if (response.data.resp === "match") {
-                            window.location = "http://localhost:3001/dashboard"
+                            window.location = "http://localhost:3001/dashboard/"+response.data.response._id
                             this.setState({ loading: false })
 
                         } else if (response.data.resp === "wrong") {
                             window.location = "http://localhost:3001/home"
                             this.setState({ msg: "password is incorrect" })
                         }
+                    }, 2000) 
                     }).catch((error) => {
                         console.log("mongodb get register error", error)
                         this.setState({ msg: "login info is incorrect" })

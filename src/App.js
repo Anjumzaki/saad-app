@@ -32,7 +32,7 @@ export default function App() {
           <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/DashBoard">
+          <Route exact path="/DashBoard/:id">
             <DashBoard />
           </Route>
           <Route path="/login">
