@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import { getUserAsync } from "./store/actions";
 import MyNavbar from './MyNavbar'
 import axios from "axios";
+import {Button} from 'reactstrap'
 
 class DashBoard extends React.Component {
     constructor(props) {
@@ -109,7 +110,7 @@ class DashBoard extends React.Component {
                                 <div class="col-12">
                                     <label>Border Size</label>
                                     <div class="form-group form-material floating" data-plugin="formMaterial">
-                                        <select onChange={(e)=>this.handleChange(e)} name="borderSize" class="form-control" required="">
+                                        <select onChange={(e)=> this.setState({borderSize:  e.target.value})} name="borderSize" class="form-control" required="">
                                             <option value="">Select</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -140,6 +141,19 @@ class DashBoard extends React.Component {
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <Button classname="btn btn-primary" onClick={() => 
+                                    axios.post('http://localhost:3000/post/pd', {
+                                        bgColor: this.state.bgColor,
+                                        textColor: this.state.txtColor,
+                                        borderColor: this.state.bordColor,
+                                        borderSize: this.state.borderSize,
+                                        mTop: this.state.mTop,
+                                        mBottom: this.state.mBottom,
+                                        mLeft: this.state.mLeft,
+                                        mRight: this.state.mRight
+                                    })
+                                } class="fadeIn fourth" > Save</Button>
                             </div>
                         </div>
                     }
@@ -147,19 +161,19 @@ class DashBoard extends React.Component {
                         <div>
                             <div class="form-group">
                         <label class="font-weight-bold">Type</label>
-                        <select  onChange={(e)=>this.handleChange(e)}  name="ifType" class="form-control" id="sel1" >
+                        <select  onChange={(e)=> this.setState({ifType: e.target.value})}  name="ifType" class="form-control" id="sel1" >
                             <option value="" >Select</option>
-                            <option value="black">Facebook</option>
-                            <option value="white">Twitter</option>
-                            <option value="red">Youtube</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="Youtube">Youtube</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label  onChange={(e)=>this.handleChange(e)}  name="ifLink" class="font-weight-bold">Iframe Link</label>
+                        <label    name="ifLink" class="font-weight-bold">Iframe Link</label>
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="password" placeholder="Enter Link" />
+                                <input onChange={(e)=>this.setState({ifLink: e.target.value})} type="text" class="form-control" name="password" placeholder="Enter Link" />
                             </div>
                         </div>
                     </div>
@@ -219,9 +233,22 @@ class DashBoard extends React.Component {
                         <button  id="btn_create" class="btn btn-primary">Create</button>
                         <a class="btn btn-sm btn-white" data-dismiss="modal">Cancel</a>
                     </div>
+                    <Button classname="btn btn-primary" onClick={() => 
+                                    axios.post('http://localhost:3000/post/se', {
+                                        ifType: this.state.ifType,
+                                        ifLink: this.state.ifLink,
+                                        width: this.state.defaultExampleRadios,
+                                        pTop: this.state.pTop,
+                                        pBottom: this.state.pBottom,
+                                        pLeft: this.state.pLeft,
+                                        pRight: this.state.pRight
+                                    })
+                                } class="fadeIn fourth" > Save</Button>
                         </div>
                     }
+                     
                 </div>
+                
                 </div>
 
         

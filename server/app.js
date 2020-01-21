@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
 const User = require("./models/User");
+const pageDesign = require("./models/pageDesign");
+const SetElement = require("./models/setElement");
 const Message = require("./models/Message");
 const Video = require("./models/Video");
 const Transaction = require("./models/Transaction");
@@ -538,6 +540,93 @@ app.post('/post/amount', async (req, res) => {
 
 });
 
+//post page design
+app.post('/post/pd', async (req, res) => {
+  console.log(req.body)
+  let pd = new pageDesign({
+    bgColor: req.body.bgColor,
+    textColor: req.body.textColor,
+    borderColor: req.body.borderColor,
+    borderSize: req.body.borderSize,
+    mTop: req.body.mTop,
+    mBottom: req.body.mBottom,
+    mLeft: req.body.mLeft,
+    mRight: req.body.mRight
+  });
+
+  pd.save(function (err) {
+    if (err) {
+      console.error(err);
+      res.status(200).send({
+        success: 'false',
+        message: 'pd not post',
+        pd,
+      })
+    } else {
+      res.status(200).send({
+        success: 'true',
+        message: 'pd post',
+        pd,
+      })
+    }
+  });
+
+});
+
+
+//post set element
+app.post('/post/se', async (req, res) => {
+  console.log(req.body)
+  let se = new SetElement({
+    ifType: req.body.ifType,
+    ifLink: req.body.ifLink,
+    width: req.body.width,
+    pTop: req.body.pTop,
+    pBottom: req.body.pBottom,
+    pLeft: req.body.pLeft,
+    pRight: req.body.pRight
+  });
+
+  se.save(function (err) {
+    if (err) {
+      console.error(err);
+      res.status(200).send({
+        success: 'false',
+        message: 'se not post',
+        se,
+      })
+    } else {
+      res.status(200).send({
+        success: 'true',
+        message: 'se post',
+        se,
+      })
+    }
+  });
+
+});
+
+app.get('/get/pd', (req, res) => {
+  pageDesign.find()
+    .then(data => {
+      console.log(data)
+      res.json(data);
+    })
+    .catch(err => res.status(404).json(err));
+}
+
+);
+
+app.get('/get/se', (req, res) => {
+  SetElement.find()
+    .then(data => {
+      console.log(data)
+      res.json(data);
+    })
+    .catch(err => res.status(404).json(err));
+}
+
+);
 
 //get user by user name
 app.get('/get/user/:userName', (req, res) => {

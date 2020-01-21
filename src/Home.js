@@ -7,6 +7,11 @@ import {
 } from "react-router-dom";
 import MyNavbar from './MyNavbar'
 export default class Login extends React.Component {
+
+    componentDidMount(){
+        
+        console.log()
+    }
     render() {
         return (
             <div class="wrapper fadeInDown">
