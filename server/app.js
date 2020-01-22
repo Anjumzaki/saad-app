@@ -214,7 +214,7 @@ app.get("/get/Transaction", async (req, res) => {
 });
 
 //get all videos  
-app.get("/get/videos", async (req, res) => {
+app.get("/get/user/Id", async (req, res) => {
   console.log("call")
   var result = await Video.find().exec();
   res.status(200).send({
@@ -237,7 +237,8 @@ app.post('/register', function (req, res) {
       if (response === null) {
         let newUser = new User({
           userName: req.body.userName,
-          email: req.body.email,
+          fName: req.body.fName,
+          lName: req.body.lName,
           password: req.body.password
         });
         bcrypt.genSalt(10, function (err, salt) {
@@ -618,7 +619,7 @@ app.get('/get/fixedAmount/:uid/:year', (req, res) => {
 );
 
 app.get('/get/user/:uid', (req, res) => {
-  console.log(req.params.uid, req.params.year)
+  console.log(req.params.uid)
   User.findOne({ _id: req.params.uid })
     .then(data => {
       console.log(data)

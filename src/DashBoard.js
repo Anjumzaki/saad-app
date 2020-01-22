@@ -6,8 +6,13 @@ import {
     Link
 } from "react-router-dom";
 import { SketchPicker } from 'react-color';
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { getUserAsync } from "./store/actions";
 import MyNavbar from './MyNavbar'
-export default class DashBoard extends React.Component {
+import axios from "axios";
+
+class DashBoard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -44,7 +49,19 @@ export default class DashBoard extends React.Component {
         })
         console.log(this.state)
     }
+
+    componentWillMount(){
+        console.log("userrrrrrrrrrrrr",this.props.match)
+        // axios.get('http://localhost:3000/get/user/'+this.props.match.params.id)
+        // .then((resp) =>console.log(resp))
+        // if(this.props.user === null){
+        //     // window.location = "http://localhost:3001/login"
+        // }
+    }
     render() {
+        // console.log("userrrrrrrrrrrrr1",this.props.match)
+         console.log("state",this.state)
+
         return (
             <div class="row">
                 <div className="dashBoard">
@@ -211,3 +228,21 @@ export default class DashBoard extends React.Component {
         );
     }
 }
+
+
+const mapStateToProps = state => ({
+    user: state.getUser.user,
+});
+const mapDispatchToProps = (dispatch, ownProps) =>
+    bindActionCreators(
+        {
+            getUserAsync
+
+        },
+        dispatch
+    );
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(DashBoard);
