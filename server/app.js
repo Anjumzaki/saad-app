@@ -36,25 +36,28 @@ mongoose
   .catch(err => console.log(err));
 app.use("/getlogo", express.static(__dirname + '/public/carLogos/'));
 app.use("/getImages", express.static(__dirname + '/uploads/'));
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './uploads/')
   },
   filename: function (req, file, cb) {
-    cb(null, file.originalname);
+    // cb(null, file.originalname);
+    cb(null,  req.headers.id);
   }
 });
+
 var upload = multer({ storage: storage });
+
 app.post('/upload', upload.single('photo'), (req, res, next) => {
-  console.log("file nameee",req.file.filename)
   var fn = req.file.filename;
   fs.readFile(req.file.path, (err, contents) => {
     if (err) {
       console.log('Error: ', err);
     }
-    else {
-      res.status(200)
-      res.send(fn).end();
+    else{
+    res.status(200)
+    res.send(fn).end();
     }
   });
 });

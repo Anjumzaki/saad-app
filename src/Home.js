@@ -15,6 +15,8 @@ export default class Login extends React.Component {
 
         axios.get('http://localhost:3000/get/se')
         .then((resp) =>console.log(resp))
+
+        // http://localhost:3000/getImages/saad.jpg
     }
     render() {
         return (

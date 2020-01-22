@@ -59,6 +59,28 @@ class DashBoard extends React.Component {
         //     // window.location = "http://localhost:3001/login"
         // }
     }
+
+    imageUpload() {
+        // console.log("checkkkkkkkkkk",name,file,ind)
+        const formData = new FormData();
+        // console.log(this.state, ' Im in image uiplod')
+        formData.append('photo',this.state.bgImage);
+        if (true) {
+            const config = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                    id: "saad.jpg"
+                }
+            };
+            axios.post("http://localhost:3000/upload", formData, config)
+                .then((response) => {
+                    console.log(response)
+                }).catch((error) => {
+                    console.log(error)
+                });
+        }
+    }
+
     render() {
         // console.log("userrrrrrrrrrrrr1",this.props.match)
          console.log("state",this.state)
@@ -152,7 +174,7 @@ class DashBoard extends React.Component {
                                         mBottom: this.state.mBottom,
                                         mLeft: this.state.mLeft,
                                         mRight: this.state.mRight
-                                    })
+                                    }).then(resp => this.imageUpload())
                                 } class="fadeIn fourth" > Save</Button>
                             </div>
                         </div>
