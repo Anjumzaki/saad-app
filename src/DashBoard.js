@@ -204,27 +204,27 @@ class DashBoard extends React.Component {
                             <label class="custom-control-label" for="auto">Auto</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input value="col-3" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-4" name="defaultExampleRadios"/>
+                            <input value="25%" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-4" name="defaultExampleRadios"/>
                             <label class="custom-control-label" for="w-1-4">1/4</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input value="col-4" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-3" name="defaultExampleRadios"/>
+                            <input value="33%" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-3" name="defaultExampleRadios"/>
                             <label  class="custom-control-label" for="w-1-3">1/3</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input value="col-6" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-2" name="defaultExampleRadios" />
+                            <input value="50%" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-1-2" name="defaultExampleRadios" />
                             <label class="custom-control-label"  for="w-1-2">1/2</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input  value="col-9" name="iWidth" onChange={(e)=>this.handleChange(e)} type="radio" class="custom-control-input" id="w-2-3" name="defaultExampleRadios" />
+                            <input  value="70%" name="iWidth" onChange={(e)=>this.handleChange(e)} type="radio" class="custom-control-input" id="w-2-3" name="defaultExampleRadios" />
                             <label class="custom-control-label"  for="w-2-3">2/3</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input value="col-10" value="col-3" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-3-4" name="defaultExampleRadios" />
+                            <input value="85%" value="col-3" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="w-3-4" name="defaultExampleRadios" />
                             <label class="custom-control-label"  for="w-3-4">3/4</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input value="col-12" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="ful" name="defaultExampleRadios" />
+                            <input value="100%" name="iWidth" onChange={(e)=>this.handleChange(e)}  type="radio" class="custom-control-input" id="ful" name="defaultExampleRadios" />
                             <label  class="custom-control-label"  for="ful"> Full</label>
                         </div>
 
