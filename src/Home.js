@@ -9,8 +9,14 @@ import MyNavbar from './MyNavbar'
 export default class Login extends React.Component {
     render() {
         return (
-            <div class="wrapper fadeInDown">
-                Home
+            <div style={{ height:'100vh',width:'100%',  backgroundImage:'url(https://i.picsum.photos/id/506/1000/1000.jpg?blur=2)',backgroundRepeat:'no-repeat',backgroundAttachment:'fixed',backgroundSize:'cover',backgroundColor:'black'}} class="wrapper">
+                <div className='row'>
+                        <iframe classname='col-4' width="50%" height="400px" src="https://www.youtube.com/embed/dlQ-5rAdbBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe classname='col-4' width="50%" height="400px" src="https://www.youtube.com/embed/dlQ-5rAdbBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe classname='col-4' width="50%" height="400px" src="https://www.youtube.com/embed/dlQ-5rAdbBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe classname='col-4' width="50%" height="400px" src="https://www.youtube.com/embed/dlQ-5rAdbBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+               
             </div>
         );
     }
